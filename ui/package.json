@@ -1,0 +1,62 @@
+{
+  "name": "thuchanhreactjs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "#start": "UI server. HMR is enabled in dev mode.",
+    "start": "node dist/server.js",
+
+    "#lint": "Runs ESLint on all relevant files",
+    "lint": "eslint server src browser --ext js,jsx",
+
+    "#compile": "Generates JS bundles for production. Use with start.",
+    "compile": "webpack --mode production",
+
+    "#watch-server-hmr": "Recompile server HMR bundle on changes.",
+    "watch-server-hmr": "webpack -w --config webpack.serverHMR.js",
+    
+    "#dev-all": "Dev mode: watch for server changes and start UI server",
+    "dev-all": "del dist/* && npm run compile && npm run watch-server-hmr & timeout 5 && npm start"
+  },
+  "author": "PNT",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "bootstrap": "^3.4.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.16.4",
+    "http-proxy-middleware": "^0.21.0",
+    "isomorphic-fetch": "^2.2.1",
+    "nodemon": "^2.0.22",
+    "prop-types": "^15.8.1",
+    "react": "^16.14.0",
+    "react-bootstrap": "^0.33.1",
+    "react-dom": "^16.14.0",
+    "react-router": "^6.11.1",
+    "react-router-bootstrap": "^0.24.4",
+    "react-router-dom": "^4.3.1",
+    "react-select": "^2.4.4",
+    "serialize-javascript": "^1.9.1",
+    "source-map-support": "^0.5.9",
+    "url-search-params": "^1.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^8.3.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "webpack": "^5.82.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-middleware": "^3.7.3",
+    "webpack-hot-middleware": "^2.25.3",
+    "webpack-merge": "^4.2.2",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
